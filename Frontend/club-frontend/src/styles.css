@@ -1,0 +1,109 @@
+@import "tailwindcss";
+@import "ngx-toastr/toastr";
+
+:root {
+  --bg: #f7f8f5;
+  --surface: #ffffff;
+  --surface-muted: #edf1ec;
+  --text: #151714;
+  --text-muted: #62685f;
+  --line: #dce3d8;
+  --brand: #0f7a5f;
+  --brand-strong: #075c48;
+  --accent: #e0b44b;
+  --danger: #c2413a;
+  --info: #2563eb;
+}
+
+.dark {
+  --bg: #0d1210;
+  --surface: #151c19;
+  --surface-muted: #1e2925;
+  --text: #f4f7f2;
+  --text-muted: #aeb9ad;
+  --line: #2a3933;
+  --brand: #38c59b;
+  --brand-strong: #6ee7bd;
+  --accent: #f0c766;
+  --danger: #f87171;
+  --info: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.club-surface {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 8px;
+}
+
+.club-focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.club-focus:focus-visible {
+  outline-color: var(--accent);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up    { animation: fade-up 0.6s ease-out both; }
+.animate-fade-in    { animation: fade-in 0.5s ease-out both; }
+.animate-scale-in   { animation: scale-in 0.4s ease-out both; }
+.animate-delay-100  { animation-delay: 0.1s; }
+.animate-delay-200  { animation-delay: 0.2s; }
+.animate-delay-300  { animation-delay: 0.3s; }
+.animate-delay-400  { animation-delay: 0.4s; }
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.dark .hover-lift:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}

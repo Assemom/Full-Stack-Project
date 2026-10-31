@@ -1,0 +1,34 @@
+Every Relationship in My System Explained:
+
+User → Coach (One to One)
+One user account can be one coach. A coach cannot exist without a user. If Role = "Coach", there is exactly one Coach profile row for that user.
+
+User → Member (One to One)
+Same idea. If Role = "Member", there is one Member profile row linked to that user.
+
+Coach → Team (One to Many)
+One coach trains multiple teams. One team has only one coach.
+
+Team → Member (One to Many)
+One team contains many members. One member belongs to one team at a time.
+
+Member → Subscription (One to Many)
+One member can have multiple subscriptions over time (renews monthly/yearly). Each subscription belongs to exactly one member.
+
+Plan → Subscription (One to Many)
+One plan (e.g. "Monthly Basic") can be subscribed to by many members. Each subscription is linked to exactly one plan.
+
+Coach → Activity (One to Many)
+One coach leads many activities. Each activity has one responsible coach.
+
+Team → Activity (One to Many)
+One team can have many activities scheduled. Each activity belongs to one team.
+
+Member → Booking (One to Many)
+One member can make many pitch bookings. Each booking belongs to one member.
+
+Pitch → Booking (One to Many)
+One pitch can be booked many times (different dates/times). Each booking is for one specific pitch.
+
+Coach → Booking (One to Many, optional)
+A booking may or may not involve a coach. The CoachId is nullable (int?).

@@ -1,0 +1,47 @@
+# ================= User uploads (runtime content) =================
+Backend/**/wwwroot/uploads/
+
+# ================= Build artifacts =================
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+*.user
+*.suo
+*.cache
+.vs/
+.idea/
+*.swp
+
+# ================= .NET =================
+*.dll
+*.exe
+*.pdb
+appsettings.*.json.user
+project.lock.json
+*.publish.xml
+*.pubxml.user
+
+# ================= Node / Angular =================
+node_modules/
+dist/
+.angular/
+coverage/
+npm-debug.log*
+yarn-error.log*
+
+# ================= Environment / secrets =================
+.env
+.env.*
+secrets.json
+UserSecrets/
+
+# ================= Logs & temp =================
+*.log
+logs/
+tmp/
+temp/
+
+# ================= OS / editor =================
+Thumbs.db
+Desktop.ini
+.DS_Store
